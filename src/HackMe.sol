@@ -32,6 +32,7 @@ contract Lib {
         owner = msg.sender;
     }
 }
+
 contract HackMe {
     address public owner;
     Lib public lib;
