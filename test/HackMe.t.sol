@@ -35,6 +35,6 @@ contract HackMeTest is Test {
         vm.startPrank(exploiter);
         Attack attack = new Attack(address(hackMe));
         attack.attack();
-        assertEq(lib.owner(), address(attack)); // Don't know why it is not exploiter
+        assertEq(hackMe.owner(), address(attack)); // Don't know why it is not exploiter
     }
 }

