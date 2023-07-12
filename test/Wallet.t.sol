@@ -35,7 +35,8 @@ contract WalletTest is Test {
         vm.startPrank(exploiter);
         Attack attack = new Attack(wallet);
         vm.stopPrank();
-        vm.startPrank(signer);
+        assertEq(wallet.owner(), signer);
+        vm.startPrank(signer,signer);
         attack.attack();
         assertEq(exploiter.balance, 10 ether);
     }
