@@ -5,9 +5,10 @@ libs = ["lib"]
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
 ffi = true
-
-[profile.default.model_checker]
-contracts = {'./src/EtherGame.sol' = ['EtherGame'], './src/EtherStore.sol' = ['EtherStore'], './src/GuessTheRandomNumber.sol' = ['GuessTheRandomNumber'], './src/HackMe.sol' = ['HackMe'], './src/HackMe2.sol' = ['HackMe2'], './src/KingOfEther.sol' = ['KingOfEther'], './src/Vault.sol' = ['Vault'], './src/Wallet.sol' = ['Wallet']}
-engine = 'chc'
-timeout = 1000
-targets = ['assert', 'underflow', 'overflow', 'divByZero', 'constantCondition', 'popEmptyArray', 'outOfBounds', 'balance']
+#
+#[profile.default.model_checker]
+#contracts = {'./src/EtherGame.sol' = ['EtherGame'], './src/EtherStore.sol' = ['EtherStore'], './src/GuessTheRandomNumber.sol' = ['GuessTheRandomNumber'], './src/HackMe.sol' = ['HackMe'], './src/HackMe2.sol' = ['HackMe2'], './src/KingOfEther.sol' = ['KingOfEther'], './src/Vault.sol' = ['Vault'], './src/Wallet.sol' = ['Wallet']}
+##engine = 'chc' // better if not using ubuntu
+#engine = 'bmc'
+#timeout = 1000
+#targets = ['assert', 'underflow', 'overflow', 'divByZero', 'constantCondition', 'popEmptyArray', 'outOfBounds', 'balance']
